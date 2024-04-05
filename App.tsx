@@ -24,7 +24,7 @@ export default function App() {
       <Theme name={isDarkTheme ? "dark" : "light"}>
         <StatusBar style={isDarkTheme ? "light" : "dark"} />
         <YStack flex={1} bg="$background" pt={RNStatusBar.currentHeight}>
-          <XStack justifyContent="space-between" alignItems="center">
+          <XStack justifyContent="space-between" alignItems="center" paddingHorizontal="$4">
             <User />
             <ChangeTheme onCheckedChange={setIsDarkTheme} />
           </XStack>
