@@ -6,6 +6,7 @@ import { TamaguiProvider, Theme, XStack, YStack } from "tamagui";
 import config from "./tamagui.config";
 import { User } from "@/components/User/User";
 import { ChangeTheme } from "@/components/ChangeTheme/ChangeTheme";
+import Routes from "@/routes";
 
 export default function App() {
   const [loaded] = useFonts({
@@ -22,11 +23,12 @@ export default function App() {
     <TamaguiProvider config={config}>
       <Theme name={isDarkTheme ? "dark" : "light"}>
         <StatusBar style={isDarkTheme ? "light" : "dark"} />
-        <YStack flex={1} bg="$background" p="$6" pt={RNStatusBar.currentHeight}>
+        <YStack flex={1} bg="$background" pt={RNStatusBar.currentHeight}>
           <XStack justifyContent="space-between" alignItems="center">
             <User />
             <ChangeTheme onCheckedChange={setIsDarkTheme} />
           </XStack>
+          <Routes />
         </YStack>
       </Theme>
     </TamaguiProvider>
